@@ -152,6 +152,245 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP九大内置对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/JSP九大内置对象/">JSP九大内置对象</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/JSP九大内置对象/" class="archive-article-date">
+  	<time datetime="2019-11-03T13:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h3><ul>
+<li><p>（一）Request：客户端与服务器的一次请求中封装了用户提交的信息（包裹），该对象可以设置请求转 发request.getRequestDispatcher(String URL).forward(request,response)，是服务器行为，是一次请求， 所以页面的URL为原始请求处理的响应页面的URL（不是最终的处理请求的响应页面，因为客户端只请求 一次）</p>
+</li>
+<li><p>（二）Response：对客户的请求做出的响应，向客户端发送数据，该对象可以设置重定向 response.sendRedirect(String URL)，是客户端行为，是两次请求，所以页面的URL为二次请求处理的响 应页面的URL</p>
+</li>
+<li><p>（三）Session：该对象是客户端与服务器的一次会话，只要不关闭服务器的所有页面（离开这个服务 器），就只视为一次会话。Session在第一个JSP页面被装载时自动创建，完成会话期管理。当一个客户 首次访问服务器上的一个JSP页面时，JSP 引擎产生一个Session对象，同时分配一个String类型的ID号， JSP引擎同时将这换个ID号发送到客户端，存放在Cookie（要求服务器启用Cookie权限）中，这样 Session对象，直到客户关闭浏览器后，服务器端该客户的Session对象才取消，并且和客户的会话对应关 系消失。当客户重新打开浏览器再连接到该服务器时，服务器为该客户再重新创建一个新的Session对象 拥有新的ID号。常用方法为String getId()获取ID号以及Boolean isNew()判断是否是一个新的客户。 Session可以理解为线程私有的。</p>
+</li>
+<li><p>（四）Application：服务器启动时产生，共享性。</p>
+</li>
+<li><p>（五）Out：Out对象本质是一个输出流，用来向客户端输出数据。Out对象用于各种数据的输出。常用 方法为： out.print()：输出各种类型数据。 out.newLine()：输出一个换行符。 out.close()：关闭流。</p>
+</li>
+<li><p>（六）Config：配置对象。</p>
+</li>
+<li><p>（七）Page：页面。</p>
+</li>
+<li><p>（八）PageContext：页面应用上下文环境。可通过该对象获取依赖于页面上下文环境的Node。</p>
+</li>
+<li><p>（九）Exception：只有在处理异常的网页中可以直接访问exception隐式对象。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/JSP九大内置对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JSP基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/JSP基础语法/">JSP基础语法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/JSP基础语法/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:23:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSP基础语法"><a href="#JSP基础语法" class="headerlink" title="JSP基础语法"></a>JSP基础语法</h3><h2 id="jsp注释"><a href="#jsp注释" class="headerlink" title="jsp注释"></a>jsp注释</h2><pre><code>&lt;!--我是HEML注释，在客户端可见--&gt;
+&lt;%--我是JSP注释，在客户端不可见--%&gt;
+&lt;%
+//单行注释
+/*
+多行注释
+*/
+%&gt;</code></pre><h2 id="jsp脚本"><a href="#jsp脚本" class="headerlink" title="jsp脚本"></a>jsp脚本</h2><pre><code>//将Java代码用&lt;% **** %&gt;的方式表达出来</code></pre><h2 id="jsp声明"><a href="#jsp声明" class="headerlink" title="jsp声明"></a>jsp声明</h2><pre><code>&lt;%! Java代码%&gt;   
+   （
+   Java代码可以是变量，也可以是方法
+       &lt;%!
+           string a = &quot;张三&quot;；
+           string add(int b , int c) {
+           return b+c;
+       }
+       %&gt;
+   ）</code></pre><h2 id="jsp表达式："><a href="#jsp表达式：" class="headerlink" title="jsp表达式："></a>jsp表达式：</h2><pre><code>&lt;% =表达式 %&gt;    //：表达式不以分号结束（表达//xx：&lt;a&gt;）</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/JSP基础语法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JSP-Servlet的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/29/JSP-Servlet的区别/">JSP/Servlet的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/29/JSP-Servlet的区别/" class="archive-article-date">
+  	<time datetime="2019-10-29T00:38:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSP-Servlet"><a href="#JSP-Servlet" class="headerlink" title="JSP/Servlet"></a>JSP/Servlet</h3><h2 id="一-相同点"><a href="#一-相同点" class="headerlink" title="一    相同点"></a>一    相同点</h2><ul>
+<li>都可以处理后台逻辑，作为mvc控制；</li>
+<li>都有9大内置对象（requset,response,session,application）</li>
+<li>都可用Java语音</li>
+</ul>
+<h2 id="二-不同点"><a href="#二-不同点" class="headerlink" title="二    不同点"></a>二    不同点</h2><ul>
+<li>JSP可以用于前端和后台，sevlet只能用与后端</li>
+<li>JSP一般用于小型项目，sevlet常用于框架大型的项目</li>
+<li>JSP内嵌有html，EL,JSTL和Java内容，servlet内用于Java内容编写</li>
+<li>JSP控制不需要项目中去注册，而Servlet必须注册（web.xml/注解）</li>
+</ul>
+<p>作用域<br>四个作用域：request域  session域  application域  page域</p>
+<p>application：<br>全局作用范围，整个应用程序共享，就是在部署文件中的同一个webApp共享，生命周期为：应用程序启动到停止。</p>
+<p>session：<br>会话作用域，当用户首次访问时，产生一个新的会话，以后服务器就可以记住这个会话状态。生命周期：会话超时，或者服务器端强制使会话失效。</p>
+<p>request：<br>请求作用域，就是客户端的一次请求。</p>
+<p>page：<br>一个JSP页面。</p>
+<p>以上作用范围使越来越小， request和page的生命周期都是短暂的，他们之间的区别就是：一个request可以包含多个page页(include，forward以及filter)。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/29/JSP-Servlet的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-10-21课堂笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
